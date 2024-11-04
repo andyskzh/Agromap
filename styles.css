@@ -1,7 +1,16 @@
 /* styles.css */
+/* Fijar la Navbar */
 .navbar {
-    background-color: #0db02b;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto */
 }
+body {
+    padding-top: 70px; /* Agrega espacio para el contenido para evitar que se superponga con la navbar */
+}
+
 
 .nav-link {
     font-weight: bold;
