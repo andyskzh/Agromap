@@ -108,13 +108,13 @@
     background-color: #CEFFAF; /* Verde más oscuro */
 }
 
-/* Estilos para la Sección de Contacto */
-.contacto-section {
-    background-color: #E5FFD5; /* Fondo verde claro */
-    border-radius: 10px;
-    padding: 40px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+/* Ajustes para la Sección de Contacto */
+.contacto-section .container {
+    max-width: 800px; /* Limita el ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 40px; /* Ajusta el padding para un mejor espaciado */
 }
+
 
 .contacto-section h2 {
     color: #0B3D30; /* Color del título */
