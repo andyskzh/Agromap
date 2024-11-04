@@ -107,3 +107,29 @@
 .section-color-dark {
     background-color: #CEFFAF; /* Verde más oscuro */
 }
+
+/* Estilos para la Sección de Contacto */
+.contacto-section {
+    background-color: #E5FFD5; /* Fondo verde claro */
+    border-radius: 10px;
+    padding: 40px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.contacto-section h2 {
+    color: #0B3D30; /* Color del título */
+}
+
+.contacto-section p {
+    color: #0B3D30; /* Color del texto */
+}
+
+.form-control {
+    border-radius: 25px;
+    border: 1px solid #C1C1C1;
+    padding: 10px 15px;
+}
+
+textarea.form-control {
+    border-radius: 10px;
+}
