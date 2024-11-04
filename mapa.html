@@ -5,48 +5,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Establecimientos</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link href="styles.css" rel="stylesheet">
     <style>
-        .mapa {
-            width: 70%;
-            height: 400px;
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #F2F2F2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 30px;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+        h2 {
+            color: #155D2E;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group input {
+            border: none;
+            border-bottom: 2px solid #C1C1C1;
+            border-radius: 0;
+            padding: 10px;
+            width: 100%;
+            outline: none;
+            box-shadow: none;
+        }
+        .input-group input:focus {
+            border-color: #7B6000;
+        }
+        .content {
+            display: flex;
+            gap: 20px;
+        }
+        .lista-mercados {
+            flex: 1;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-height: 600px;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        .mercado-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #EEE;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .mercado-item:hover {
+            background-color: #E5FFD5;
+        }
+        .mercado-item .icon {
+            color: #FF6347;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        #mapa {
+            flex: 2;
+            height: 600px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h2 class="mb-3">Establecimientos</h2>
-        <div class="input-group mb-4">
-            <input type="text" class="form-control" id="buscarMercado" placeholder="🔍 Buscar" onkeyup="filtrarMercados()">
+    <div class="container">
+        <h2>Establecimientos</h2>
+        <div class="input-group">
+            <input type="text" id="buscarMercado" placeholder="🔍 Buscar" onkeyup="filtrarMercados()">
         </div>
-        <div class="d-flex">
+        <div class="content">
             <!-- Lista de Mercados -->
-            <div class="lista-mercados p-3" id="listaMercados">
-                <div class="lista-item" onclick="centrarEnMercado('El Mamey')">
-                    📍 El Mamey<br><small>Sancti Spíritus</small>
+            <div class="lista-mercados" id="listaMercados">
+                <div class="mercado-item" onclick="centrarEnMercado('El Mamey')">
+                    <span class="icon">📍</span>
+                    <div>
+                        <strong>El Mamey</strong><br>
+                        <small>Sancti Spíritus</small>
+                    </div>
                 </div>
-                <div class="lista-item" onclick="centrarEnMercado('El Gigante')">
-                    📍 El Gigante<br><small>Sancti Spíritus</small>
+                <div class="mercado-item" onclick="centrarEnMercado('El Gigante')">
+                    <span class="icon">📍</span>
+                    <div>
+                        <strong>El Gigante</strong><br>
+                        <small>Sancti Spíritus</small>
+                    </div>
                 </div>
-                <div class="lista-item" onclick="centrarEnMercado('La Toronja')">
-                    📍 La Toronja<br><small>Villa Clara</small>
+                <div class="mercado-item" onclick="centrarEnMercado('La Toronja')">
+                    <span class="icon">📍</span>
+                    <div>
+                        <strong>La Toronja</strong><br>
+                        <small>Villa Clara</small>
+                    </div>
                 </div>
-                <div class="lista-item" onclick="centrarEnMercado('El Saltarín')">
-                    📍 El Saltarín<br><small>Sancti Spíritus</small>
+                <div class="mercado-item" onclick="centrarEnMercado('El Saltarín')">
+                    <span class="icon">📍</span>
+                    <div>
+                        <strong>El Saltarín</strong><br>
+                        <small>Sancti Spíritus</small>
+                    </div>
                 </div>
             </div>
 
             <!-- Mapa -->
-            <div id="mapa" class="mapa"></div>
+            <div id="mapa"></div>
         </div>
     </div>
 
-    <script src="script.js"></script>
-    <!-- Incluye Google Maps API -->
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&libraries=places&callback=initMap">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Inicializar el mapa
+        var mapa = L.map("mapa").setView([21.5, -79.371124], 8);
+
+        // Cargar los mosaicos del mapa
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "© OpenStreetMap contributors"
+        }).addTo(mapa);
+
+        // Datos de los mercados
+        var mercados = [
+            { nombre: "El Mamey", lat: 21.539, lng: -79.256, horario: "8:00 am - 4:00 pm" },
+            { nombre: "El Gigante", lat: 21.547, lng: -79.261, horario: "8:00 am - 4:00 pm" },
+            { nombre: "La Toronja", lat: 22.419, lng: -79.655, horario: "9:00 am - 5:00 pm" },
+            { nombre: "El Saltarín", lat: 21.529, lng: -79.238, horario: "7:00 am - 3:00 pm" },
+        ];
+
+        // Añadir marcadores al mapa
+        mercados.forEach(function(mercado) {
+            var marcador = L.marker([mercado.lat, mercado.lng]).addTo(mapa)
+                .bindPopup(`<strong>${mercado.nombre}</strong><br>Horario: ${mercado.horario}`);
+        });
+
+        // Función para centrar el mapa en un mercado
+        function centrarEnMercado(nombre) {
+            var mercado = mercados.find(m => m.nombre === nombre);
+            if (mercado) {
+                mapa.setView([mercado.lat, mercado.lng], 13);
+            }
+        }
+
+        // Función para filtrar los mercados
+        function filtrarMercados() {
+            var input = document.getElementById("buscarMercado").value.toLowerCase();
+            var items = document.getElementsByClassName("mercado-item");
+
+            Array.from(items).forEach(function(item) {
+                var texto = item.textContent || item.innerText;
+                item.style.display = texto.toLowerCase().includes(input) ? "" : "none";
+            });
+        }
     </script>
 </body>
 </html>
