@@ -109,11 +109,20 @@
 }
 
 /* Ajustes para la Sección de Contacto */
-.contacto-section .container {
-    max-width: 800px; /* Limita el ancho máximo del contenedor */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-    padding: 40px; /* Ajusta el padding para un mejor espaciado */
+.contacto-section {
+    background-color: #F2F2F2; /* Fondo gris claro como las secciones anteriores */
+    padding: 40px 0; /* Padding superior e inferior */
 }
+
+.contacto-section .container {
+    max-width: 1000px; /* Ajusta el ancho máximo para que coincida con las secciones de alimentos */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 30px; /* Espaciado interno */
+    background-color: #E5FFD5; /* Fondo verde claro del contenedor interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
 
 
 .contacto-section h2 {
