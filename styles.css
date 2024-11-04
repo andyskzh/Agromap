@@ -1,0 +1,109 @@
+/* styles.css */
+.navbar {
+    background-color: #0db02b;
+}
+
+.nav-link {
+    font-weight: bold;
+    color: #0B3D30;
+    margin-right: 10px;
+}
+
+.form-control {
+    border-radius: 25px;
+    padding: 5px 15px;
+    border: 1px solid #C1C1C1;
+}
+
+
+/* Hero Section Personalizado */
+.hero-section {
+    color: white;
+    position: relative;
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+}
+
+.hero-section .btn {
+    background-color: #FFFFFF;
+    color: #0B3D30;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+
+
+/* Sección de Productos */
+.productos-section {
+    background-color: #F2F2F2; /* Fondo general */
+}
+
+/* Estilos para la Tarjeta de Producto */
+.card {
+    border: none;
+    background-color: #E5FFD5; /* Fondo verde claro */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.card-img-container {
+    background-color: #F2F2F2; /* Fondo gris claro */
+    border-radius: 15px 15px 0 0; /* Bordes redondeados solo en la parte superior */
+    padding: 20px;
+}
+
+.card img {
+    max-height: 150px;
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+    color: #000; /* Texto en negro */
+}
+
+.text-success {
+    color: #7B6000; /* Color verde para "Disponible" */
+}
+
+.text-danger {
+    color: #FF808C; /* Color rojo para "No Disponible" */
+}
+
+.text-muted {
+    color: #C1C1C1; /* Color gris claro para el texto tachado */
+}
+
+.btn-success {
+    background-color: #9AFF58; /* Verde brillante */
+    border: none;
+    font-weight: bold;
+    color: #000; /* Texto en negro */
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #0f6300; /* Verde oscuro al pasar el mouse */
+}
+
+/* Colores de fondo para las secciones */
+.section-color-light {
+    background-color: #E5FFD5; /* Verde claro */
+}
+
+.section-color-dark {
+    background-color: #CEFFAF; /* Verde más oscuro */
+}
