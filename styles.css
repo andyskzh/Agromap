@@ -142,3 +142,32 @@
 textarea.form-control {
     border-radius: 10px;
 }
+
+/* Estilos para el Footer */
+.footer {
+    background-color: #0B3D30; /* Fondo verde oscuro */
+    color: #FFFFFF; /* Texto blanco */
+}
+
+.footer h5 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #9AFF58; /* Cambia el color al pasar el mouse */
+}
