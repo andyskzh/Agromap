@@ -180,3 +180,9 @@ textarea.form-control {
 .social-icons a:hover {
     color: #9AFF58; /* Cambia el color al pasar el mouse */
 }
+
+.producto-imagen {
+    max-height: 400px; /* Ajusta la altura según sea necesario */
+    object-fit: cover; /* Ajusta la imagen para llenar el contenedor */
+    border-radius: 10px;
+}
