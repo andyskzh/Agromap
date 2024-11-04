@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Establecimientos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .mapa {
+            width: 70%;
+            height: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-3">Establecimientos</h2>
+        <div class="input-group mb-4">
+            <input type="text" class="form-control" id="buscarMercado" placeholder="🔍 Buscar" onkeyup="filtrarMercados()">
+        </div>
+        <div class="d-flex">
+            <!-- Lista de Mercados -->
+            <div class="lista-mercados p-3" id="listaMercados">
+                <div class="lista-item" onclick="centrarEnMercado('El Mamey')">
+                    📍 El Mamey<br><small>Sancti Spíritus</small>
+                </div>
+                <div class="lista-item" onclick="centrarEnMercado('El Gigante')">
+                    📍 El Gigante<br><small>Sancti Spíritus</small>
+                </div>
+                <div class="lista-item" onclick="centrarEnMercado('La Toronja')">
+                    📍 La Toronja<br><small>Villa Clara</small>
+                </div>
+                <div class="lista-item" onclick="centrarEnMercado('El Saltarín')">
+                    📍 El Saltarín<br><small>Sancti Spíritus</small>
+                </div>
+            </div>
+
+            <!-- Mapa -->
+            <div id="mapa" class="mapa"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Incluye Google Maps API -->
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&libraries=places&callback=initMap">
+    </script>
+</body>
+</html>
