@@ -108,6 +108,30 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+        .popup-content {
+            text-align: center;
+        }
+        .popup-content img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .btn-ver-info {
+            background-color: #9AFF58;
+            color: #FFF;
+            border: none;
+            border-radius: 20px;
+            padding: 5px 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-ver-info:hover {
+            background-color: #0f6300;
+        }
     </style>
 </head>
 <body>
@@ -193,27 +217,37 @@
         // Datos de los mercados
         var mercados = [
             { nombre: "El Mamey", lat: 21.539, lng: -79.256, horario: "8:00 am - 4:00 pm", foto: "ruta-a-foto-1.jpg" },
-            { nombre: "El Gigante", lat: 21.547, lng: -79.261, horario: "8:00 am - 4:00 pm", foto: "ruta-a-foto-2.jpg" },
+            { nombre: "El Gigante", lat: 21.547, lng: -79.261, horario: "8:00 am - 4:00 pm", foto: "img/el gigante.png" },
             { nombre: "La Toronja", lat: 22.419, lng: -79.655, horario: "9:00 am - 5:00 pm", foto: "ruta-a-foto-3.jpg" },
             { nombre: "El Saltarín", lat: 21.529, lng: -79.238, horario: "7:00 am - 3:00 pm", foto: "ruta-a-foto-4.jpg" },
         ];
 
-        // Añadir marcadores al mapa
+        // Crear un objeto de marcadores
+        var marcadores = [];
+
+        // Añadir marcadores al mapa con popups
         mercados.forEach(function(mercado) {
             var marcador = L.marker([mercado.lat, mercado.lng]).addTo(mapa)
                 .bindPopup(`
-                    <div>
+                    <div class="popup-content">
+                        <img src="${mercado.foto}" alt="${mercado.nombre}">
                         <strong>${mercado.nombre}</strong><br>
-                        Horario: ${mercado.horario}
+                        Horario: ${mercado.horario}<br>
+                        <button class="btn-ver-info">Ver Información</button>
                     </div>
                 `);
+            marcadores.push(marcador);
         });
 
-        // Función para centrar el mapa en un mercado
+        // Función para centrar y abrir el popup de un mercado
         function centrarEnMercado(nombre) {
             var mercado = mercados.find(m => m.nombre === nombre);
             if (mercado) {
-                mapa.setView([mercado.lat, mercado.lng], 13);
+                var marcador = marcadores.find(m => m.getLatLng().lat === mercado.lat && m.getLatLng().lng === mercado.lng);
+                if (marcador) {
+                    mapa.setView([mercado.lat, mercado.lng], 13); // Acercar el mapa
+                    marcador.openPopup(); // Abrir el popup
+                }
             }
         }
 
