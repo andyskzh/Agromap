@@ -14,9 +14,43 @@
             margin: 0;
             padding: 0;
         }
+        .navbar {
+            background-color: #9AFF58;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .navbar a {
+            color: #155D2E;
+            font-weight: bold;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .search-bar input {
+            border: none;
+            border-radius: 20px;
+            padding: 5px 15px;
+            outline: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
         .container {
-            margin-top: 30px;
             max-width: 1200px;
+            margin: 30px auto;
             padding: 0 20px;
         }
         h2 {
@@ -35,7 +69,6 @@
             padding: 10px;
             width: 100%;
             outline: none;
-            box-shadow: none;
         }
         .input-group input:focus {
             border-color: #7B6000;
@@ -78,6 +111,32 @@
     </style>
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #9AFF58; padding: 10px;">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="Logo" style="width: 80px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link font-weight-bold text-dark" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><span class="nav-link text-dark">|</span></li>
+                    <li class="nav-item"><a class="nav-link font-weight-bold text-dark" href="categorias.html">Categorías</a></li>
+                    <li class="nav-item"><span class="nav-link text-dark">|</span></li>
+                    <li class="nav-item"><a class="nav-link font-weight-bold text-dark active" href="mapa.html">Establecimientos</a></li>
+                    <li class="nav-item"><span class="nav-link text-dark">|</span></li>
+                    <li class="nav-item"><a class="nav-link font-weight-bold text-dark" href="login.html">Iniciar Sesión</a></li>
+                </ul>
+                <form class="form-inline">
+                    <input class="form-control rounded-pill" type="search" placeholder="Buscar" aria-label="Buscar" style="padding-left: 10px; border: 1px solid #C1C1C1;">
+                </form>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <h2>Establecimientos</h2>
         <div class="input-group">
@@ -133,16 +192,21 @@
 
         // Datos de los mercados
         var mercados = [
-            { nombre: "El Mamey", lat: 21.539, lng: -79.256, horario: "8:00 am - 4:00 pm" },
-            { nombre: "El Gigante", lat: 21.547, lng: -79.261, horario: "8:00 am - 4:00 pm" },
-            { nombre: "La Toronja", lat: 22.419, lng: -79.655, horario: "9:00 am - 5:00 pm" },
-            { nombre: "El Saltarín", lat: 21.529, lng: -79.238, horario: "7:00 am - 3:00 pm" },
+            { nombre: "El Mamey", lat: 21.539, lng: -79.256, horario: "8:00 am - 4:00 pm", foto: "ruta-a-foto-1.jpg" },
+            { nombre: "El Gigante", lat: 21.547, lng: -79.261, horario: "8:00 am - 4:00 pm", foto: "ruta-a-foto-2.jpg" },
+            { nombre: "La Toronja", lat: 22.419, lng: -79.655, horario: "9:00 am - 5:00 pm", foto: "ruta-a-foto-3.jpg" },
+            { nombre: "El Saltarín", lat: 21.529, lng: -79.238, horario: "7:00 am - 3:00 pm", foto: "ruta-a-foto-4.jpg" },
         ];
 
         // Añadir marcadores al mapa
         mercados.forEach(function(mercado) {
             var marcador = L.marker([mercado.lat, mercado.lng]).addTo(mapa)
-                .bindPopup(`<strong>${mercado.nombre}</strong><br>Horario: ${mercado.horario}`);
+                .bindPopup(`
+                    <div>
+                        <strong>${mercado.nombre}</strong><br>
+                        Horario: ${mercado.horario}
+                    </div>
+                `);
         });
 
         // Función para centrar el mapa en un mercado
