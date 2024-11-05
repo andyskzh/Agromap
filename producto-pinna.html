@@ -74,7 +74,34 @@
                     <li><a href="mapa.html#elSaltarín" class="text-danger">📍 El Saltarín, Villa Clara</a></li>
                     <li><a href="mapa.html#buenViaje" class="text-danger">📍 Buen Viaje, Villa Clara</a></li>
                 </ul>
-                <button class="btn btn-success rounded-pill mt-3">Información Nutricional</button>
+<!-- Botón que abre el modal -->
+<button class="btn btn-success rounded-pill mt-3" data-toggle="modal" data-target="#infoNutricionalModal">Información Nutricional</button>
+
+<!-- Modal de Información Nutricional -->
+<div class="modal fade" id="infoNutricionalModal" tabindex="-1" aria-labelledby="infoNutricionalModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="infoNutricionalModalLabel">Información Nutricional</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Calorías:</strong> 50 kcal por 100g</p>
+                <p><strong>Carbohidratos:</strong> 13g</p>
+                <p><strong>Proteínas:</strong> 0.5g</p>
+                <p><strong>Grasas:</strong> 0.1g</p>
+                <p><strong>Fibra:</strong> 1.4g</p>
+                <p><strong>Vitaminas:</strong> Vitamina C, B6, Folato</p>
+                <p><strong>Minerales:</strong> Manganeso, Potasio</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
             </div>
         </div>
     </div>
