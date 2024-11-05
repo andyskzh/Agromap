@@ -40,28 +40,40 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
-                <!-- Carrusel de imágenes ajustado -->
-                <div id="productoCarrusel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="img/pina.png" class="d-block w-100 producto-imagen" alt="Piña">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/pinna2.jpg" class="d-block w-100 producto-imagen" alt="Piña">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/pinna3.jpg" class="d-block w-100 producto-imagen" alt="Piña">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#productoCarrusel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Anterior</span>
-                    </a>
-                    <a class="carousel-control-next" href="#productoCarrusel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Siguiente</span>
-                    </a>
-                </div>
+                <!-- Carrusel de Imágenes -->
+<div id="productoCarrusel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="img/pina.png" class="d-block w-100 producto-imagen" alt="Piña" data-toggle="modal" data-target="#imagenModal" onclick="cambiarImagenModal('img/pina.png')">
+        </div>
+        <div class="carousel-item">
+            <img src="img/pinna2.jpg" class="d-block w-100 producto-imagen" alt="Piña" data-toggle="modal" data-target="#imagenModal" onclick="cambiarImagenModal('img/pinna2.jpg')">
+        </div>
+        <div class="carousel-item">
+            <img src="img/pinna3.jpg" class="d-block w-100 producto-imagen" alt="Piña" data-toggle="modal" data-target="#imagenModal" onclick="cambiarImagenModal('img/pinna3.jpg')">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#productoCarrusel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#productoCarrusel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+    </a>
+</div>
+
+<!-- Modal para Ampliar Imágenes -->
+<div class="modal fade" id="imagenModal" tabindex="-1" aria-labelledby="imagenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img id="imagenAmpliada" src="" alt="Imagen Ampliada" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
             </div>
             <div class="col-md-6">
                 <h2>Piña</h2>
@@ -109,5 +121,11 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function cambiarImagenModal(src) {
+    document.getElementById('imagenAmpliada').src = src;
+}
+
+    </script>
 </body>
 </html>
