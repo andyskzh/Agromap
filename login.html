@@ -8,8 +8,48 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img/logo.png" type="image/x-icon">
 
+</head><!-- Favicon -->
+<link rel="icon" href="img/logo.png" type="image/x-icon">
+
 </head>
 <body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" style="background-color: #4ec564; padding: 10px;">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo.png" alt="Logo" style="width: 80px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link font-weight-bold text-dark" href="index.html">Inicio</a></li>
+                <li class="nav-item"><span class="nav-link text-dark">|</span></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle font-weight-bold text-dark" href="#" id="categoriasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categorías
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="categoriasDropdown">
+                        <a class="dropdown-item" href="#frutas">Frutas</a>
+                        <a class="dropdown-item" href="#hortalizas">Hortalizas</a>
+                        <a class="dropdown-item" href="#viandas">Viandas</a>
+                        <a class="dropdown-item" href="#carnes">Carnes y Embutidos</a>
+                        <a class="dropdown-item" href="#otros">Otros</a>
+                        <a class="dropdown-item" href="todos.html">Todos</a>
+                    </div>
+                </li>
+                <li class="nav-item"><span class="nav-link text-dark">|</span></li>
+                <li class="nav-item"><a class="nav-link font-weight-bold text-dark" href="mapa.html">Establecimientos</a></li>
+                <li class="nav-item"><span class="nav-link text-dark">|</span></li>
+                <li class="nav-item"><a class="nav-link font-weight-bold text-dark" href="login.html">Iniciar Sesión</a></li>
+            </ul>
+            <form class="form-inline">
+                <input class="form-control rounded-pill" type="search" placeholder="Buscar" aria-label="Buscar" style="padding-left: 10px; border: 1px solid #C1C1C1;">
+            </form>
+        </div>
+    </div>
+</nav>
     <!-- Formulario de Iniciar Sesión -->
     <div class="container mt-5" style="max-width: 500px;">
         <div class="card p-4" style="border-radius: 10px;" id="loginForm">
