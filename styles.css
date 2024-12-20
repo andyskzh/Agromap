@@ -58,7 +58,7 @@ body {
 /* Estilos para la Tarjeta de Producto */
 .card {
     border: none;
-    background-color: #E5FFD5; /* Fondo verde claro */
+    background-color: #dbffe2; /* Fondo verde claro */
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
@@ -110,11 +110,12 @@ body {
 
 /* Colores de fondo para las secciones */
 .section-color-light {
-    background-color: #E5FFD5; /* Verde claro */
+    background-color: #bee5c5; /* Verde claro */
 }
 
 .section-color-dark {
-    background-color: #CEFFAF; /* Verde más oscuro */
+    background-color:  #99daa5
+    ; /* Verde más oscuro */
 }
 
 /* Ajustes para la Sección de Contacto */
