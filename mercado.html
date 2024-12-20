@@ -14,6 +14,21 @@
             object-fit: cover; /* Hace que la imagen se ajuste al contenedor sin deformarse */
             border-radius: 10px;
         }
+
+        .btn-custom {
+    background-color: #4cc562; /* Mismo verde brillante */
+    border: none;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #0DB02B; /* Verde oscuro */
+    color: #ffffff;
+}
+
     </style>
  <link rel="icon" href="img/logo.png" type="image/x-icon">
 
@@ -111,6 +126,13 @@
         <img src="img/acopio.jpg" alt="Logo SAS-Cuba" style="width: 60px; height: auto; border-radius: 5px;">
     </div>
 </div>
+
+ <!-- Botón para Ver en el Mapa -->
+<div class="mt-3">
+    <button class="btn btn-custom" onclick="mostrarMapa('El Gigante')">Ver en el Mapa</button>
+</div>
+
+
  </div>
 
 <!-- Contenedor principal con márgenes adecuados -->
@@ -200,6 +222,10 @@
     <script>
         function cambiarImagenModal(src) {
     document.getElementById('imagenAmpliada').src = src;
+}
+function mostrarMapa(nombreMercado) {
+    // Abre la página del mapa con el mercado centrado en su popup
+    window.location.href = `mapa.html?mercado=${encodeURIComponent(nombreMercado)}`;
 }
 
     </script>
