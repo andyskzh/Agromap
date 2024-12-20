@@ -308,3 +308,19 @@ textarea.form-control {
     background-color: #76c043;
     color: white;
 }
+
+.dropdown-menu {
+    background-color: #bee5c5; /* Fondo verde claro */
+    border: 1px solid #4ec564; /* Borde verde */
+}
+
+.dropdown-item {
+    color: #0B3D30; /* Color del texto */
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.dropdown-item:hover {
+    background-color: #4ec564; /* Fondo verde oscuro al pasar el mouse */
+    color: #fff; /* Texto blanco */
+}
