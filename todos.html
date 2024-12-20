@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos los Productos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+
+    <style>
+        .productos-section {
+            margin-top: 20px;
+        }
+        .productos-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .productos-section .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #4ec564; padding: 10px;">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="Logo" style="width: 80px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link font-weight-bold text-dark" href="index.html">Inicio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle font-weight-bold text-dark" href="#" id="categoriasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categorías
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="categoriasDropdown">
+                            <a class="dropdown-item" href="#frutas">Frutas</a>
+                            <a class="dropdown-item" href="#hortalizas">Hortalizas</a>
+                            <a class="dropdown-item" href="#viandas">Viandas</a>
+                            <a class="dropdown-item" href="#carnes">Carnes y Embutidos</a>
+                            <a class="dropdown-item" href="#otros">Otros</a>
+                            <a class="dropdown-item" href="todos.html">Todos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link font-weight-bold text-dark" href="mapa.html">Establecimientos</a></li>
+                    <li class="nav-item"><a class="nav-link font-weight-bold text-dark" href="login.html">Iniciar Sesión</a></li>
+                </ul>
+                <form class="form-inline">
+                    <input class="form-control rounded-pill" type="search" placeholder="Buscar" aria-label="Buscar" style="padding-left: 10px; border: 1px solid #C1C1C1;">
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Todos los Productos -->
+    <div class="container productos-section">
+        <h2 class="font-weight-bold">Todos los Productos</h2>
+        <div class="row">
+            <!-- Tarjetas de Productos -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-img-container"><img src="img/pinna.png" class="card-img-top" alt="Piña"></div>
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mb-2">Piña</h5>
+                        <p class="text-success mb-1">Disponible <span class="text-muted"><s>No Disponible</s></span></p>
+                        <a href="producto-pinna.html" class="btn btn-success rounded-pill">Ver Información</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Más tarjetas de Frutas -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-img-container"><img src="img/platano.png" class="card-img-top" alt="Platano"></div>
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mb-2">Platano de Fruta</h5>
+                        <p class="text-danger mb-1"> No Disponible <span class="text-muted"><s>Disponible</s></span></p>
+                        <a href="#" class="btn btn-success rounded-pill">Ver Información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-img-container"><img src="img/mango.png" class="card-img-top" alt="Mango"></div>
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mb-2">Mango</h5>
+                        <p class="text-success mb-1">Disponible <span class="text-muted"><s>No Disponible</s></span></p>
+                        <a href="#" class="btn btn-success rounded-pill">Ver Información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-img-container"><img src="img/tomate.png" class="card-img-top" alt="Tomate"></div>
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mb-2">Tomate</h5>
+                        <p class="text-success mb-1">Disponible <span class="text-muted"><s>No Disponible</s></span></p>
+                        <a href="#" class="btn btn-success rounded-pill">Ver Información</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Más tarjetas de Hortalizas -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-img-container"><img src="img/lechuga.png" class="card-img-top" alt="Lechuga"></div>
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mb-2">Lechuga</h5>
+                        <p class="text-danger mb-1"> No Disponible <span class="text-muted"><s>Disponible</s></span></p>
+                        <a href="#" class="btn btn-success rounded-pill">Ver Información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-img-container"><img src="img/pepino.png" class="card-img-top" alt="Pepino"></div>
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mb-2">Pepino</h5>
+                        <p class="text-success mb-1">Disponible <span class="text-muted"><s>No Disponible</s></span></p>
+                        <a href="#" class="btn btn-success rounded-pill">Ver Información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-img-container"><img src="img/boniato.png" class="card-img-top" alt="Boniato"></div>
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mb-2">Boniato</h5>
+                        <p class="text-success mb-1">Disponible <span class="text-muted"><s>No Disponible</s></span></p>
+                        <a href="#" class="btn btn-success rounded-pill">Ver Información</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Más tarjetas de Viandas -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-img-container"><img src="img/papas.png" class="card-img-top" alt="papas"></div>
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mb-2">Papas</h5>
+                        <p class="text-danger mb-1"> No Disponible <span class="text-muted"><s>Disponible</s></span></p>
+                        <a href="#" class="btn btn-success rounded-pill">Ver Información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-img-container"><img src="img/yuca.png" class="card-img-top" alt="Viandas"></div>
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mb-2">Viandas</h5>
+                        <p class="text-success mb-1">Disponible <span class="text-muted"><s>No Disponible</s></span></p>
+                        <a href="#" class="btn btn-success rounded-pill">Ver Información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-img-container"><img src="img/pollo.png" class="card-img-top" alt="Pollo"></div>
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mb-2">Pollo</h5>
+                        <p class="text-success mb-1">Disponible <span class="text-muted"><s>No Disponible</s></span></p>
+                        <a href="#" class="btn btn-success rounded-pill">Ver Información</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Más tarjetas de Carnes y Embutidos -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-img-container"><img src="img/salchichas.png" class="card-img-top" alt="Lechuga"></div>
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mb-2">Salchichas</h5>
+                        <p class="text-danger mb-1"> No Disponible <span class="text-muted"><s>Disponible</s></span></p>
+                        <a href="#" class="btn btn-success rounded-pill">Ver Información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-img-container"><img src="img/puerco.png" class="card-img-top" alt="Pollo"></div>
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mb-2">Pierna de Puerco</h5>
+                        <p class="text-success mb-1">Disponible <span class="text-muted"><s>No Disponible</s></span></p>
+                        <a href="#" class="btn btn-success rounded-pill">Ver Información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-img-container"><img src="img/aceite.png" class="card-img-top" alt="Miel"></div>
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mb-2">Aceite</h5>
+                        <p class="text-success mb-1">Disponible <span class="text-muted"><s>No Disponible</s></span></p>
+                        <a href="#" class="btn btn-success rounded-pill">Ver Información</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Más tarjetas de Otros -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-img-container"><img src="img/huevo.png" class="card-img-top" alt="Lechuga"></div>
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mb-2">Huevo</h5>
+                        <p class="text-danger mb-1"> No Disponible <span class="text-muted"><s>Disponible</s></span></p>
+                        <a href="#" class="btn btn-success rounded-pill">Ver Información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-img-container"><img src="img/pure tomate.png" class="card-img-top" alt="Miel"></div>
+                    <div class="card-body">
+                        <h5 class="font-weight-bold mb-2">Pure de Tomate</h5>
+                        <p class="text-success mb-1">Disponible <span class="text-muted"><s>No Disponible</s></span></p>
+                        <a href="#" class="btn btn-success rounded-pill">Ver Información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
