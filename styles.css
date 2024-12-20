@@ -96,16 +96,16 @@ body {
 }
 
 .btn-success {
-    background-color: #9AFF58; /* Verde brillante */
+    background-color: #4cc562; /* Verde brillante */
     border: none;
     font-weight: bold;
-    color: #000; /* Texto en negro */
+    color: #ffffff; /* Texto en negro */
     padding: 10px 20px;
     transition: background-color 0.3s;
 }
 
 .btn-success:hover {
-    background-color: #0f6300; /* Verde oscuro al pasar el mouse */
+    background-color: #0DB02B; /* Verde oscuro al pasar el mouse */
 }
 
 /* Colores de fondo para las secciones */
