@@ -233,12 +233,12 @@ textarea.form-control {
 .rating-bar-fill {
     height: 100%;
     border-radius: 4px;
-    background-color: #76c043;
+    background-color: #0DB02B;
 }
 
 /* Botón Añadir Reseña */
 .add-review-button {
-    background-color: #76c043;
+    background-color: #4cc562;
     color: white;
     border: none;
     border-radius: 5px;
@@ -248,7 +248,7 @@ textarea.form-control {
 }
 
 .add-review-button:hover {
-    background-color: #5c9c35;
+    background-color: #0DB02B;
 }
 
 /* Sección de comentarios */
